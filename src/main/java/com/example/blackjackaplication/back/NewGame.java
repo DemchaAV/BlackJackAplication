@@ -234,13 +234,7 @@ public class NewGame {
         }
 
 
-    }echo "# blackjackApplication" >> README.md
-    git init
-    git add README.md
-    git commit -m "first commit"
-    git branch -M main
-    git remote add origin https://github.com/DemchaAV/blackjackApplication.git
-    git push -u origin main
+    }
 
     public void getCard(int player) {
         if (player > 0)

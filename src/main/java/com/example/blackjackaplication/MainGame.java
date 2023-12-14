@@ -105,7 +105,7 @@ public class MainGame extends Game implements Initializable {
     private void dropCards(){
         game.firstDropCard();
     }
-I
+
 
 
 
