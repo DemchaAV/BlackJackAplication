@@ -1,0 +1,4 @@
+.root {
+  -fx-background-color: #1f1f1f; /* Цвет фона приложения */
+  -fx-text-fill: #ffffff; /* Цвет текста по умолчанию */
+}

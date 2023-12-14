@@ -1,0 +1,10 @@
+/* button.css */
+
+.button {
+  -fx-background-color: #29568a; /* Цвет кнопок по умолчанию */
+  -fx-text-fill: #ffffff; /* Цвет текста кнопок по умолчанию */
+}
+
+.button:hover {
+  -fx-background-color: #3674bb; /* Цвет кнопок при наведении */
+}

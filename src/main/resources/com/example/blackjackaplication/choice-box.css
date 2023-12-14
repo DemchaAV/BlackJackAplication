@@ -1,0 +1,28 @@
+/* styles.css */
+
+.choice-box {
+  -fx-background-color: #29568a; /* Цвет фона ChoiceBox */
+  -fx-text-fill: #ffffff; /* Цвет текста ChoiceBox */
+    -fx-font-size: 16px; /* Установите желаемый размер шрифта */
+}
+
+.choice-box:hover {
+  -fx-background-color: #3674bb;; /* Цвет ChoiceBox при наведении */
+}
+
+.choice-box .arrow {
+  -fx-background-color: #ffffff; /* Цвет стрелочки */
+  -fx-text-fill: #ffffff ;
+}
+
+.choice-box .context-menu {
+  -fx-background-color: #232323; /* Цвет выпадающего списка */
+  -fx-text-fill: #ffffff; /* Цвет текста в выпадающем списке */
+}
+
+.choice-box .context-menu-item:hover {
+  -fx-background-color: #929292; /* Цвет элемента выпадающего списка при наведении */
+  -fx-text-fill: #e0e0e0;
+    -fx-font-size: 16px; /* Установите желаемый размер шрифта */
+
+}
