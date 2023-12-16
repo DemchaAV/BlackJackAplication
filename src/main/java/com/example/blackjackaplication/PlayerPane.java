@@ -2,26 +2,22 @@ package com.example.blackjackaplication;
 
 
 import com.example.blackjackaplication.back.Player;
-import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 
 public class PlayerPane extends Pane {
-    private VBox player;
+    private VBox playerBox;
     private Label nameLabel;
     private HBox balanceHold;
     private Label balanceLabel;
     private HBox cardHoldBacket;
 
-    public PlayerPane(Player player) {
-        this.nameLabel = new Label(player.getName());
-        this.balanceLabel = new Label(String.valueOf(player.getBalance()));
+    public PlayerPane(Player playerBox) {
+        this.nameLabel = new Label(playerBox.getName());
+        this.balanceLabel = new Label(String.valueOf(playerBox.getBalance()));
         this.cardHoldBacket = new HBox();  // Assuming this is your card container
 
         // Set font for nameLabel
@@ -34,17 +30,59 @@ public class PlayerPane extends Pane {
         initializeControls();
         layoutControls();
     }
+    public void reLoadInfo(){
+
+    }
+    public void setPlayer(Player playe){
+
+    }
+
+    public VBox getPlayerBox() {
+        return playerBox;
+    }
+
+    public void setPlayerBox(VBox playerBox) {
+        this.playerBox = playerBox;
+    }
+
+    public Label getNameLabel() {
+        return nameLabel;
+    }
+
+    public void setNameLabel(Label nameLabel) {
+        this.nameLabel = nameLabel;
+    }
+
+    public HBox getBalanceHold() {
+        return balanceHold;
+    }
+
+    public void setBalanceHold(HBox balanceHold) {
+        this.balanceHold = balanceHold;
+    }
+
+    public Label getBalanceLabel() {
+        return balanceLabel;
+    }
+
+    public void setBalanceLabel(Label balanceLabel) {
+        this.balanceLabel = balanceLabel;
+    }
+
+    public void setCardHoldBacket(HBox cardHoldBacket) {
+        this.cardHoldBacket = cardHoldBacket;
+    }
 
     private void initializeControls() {
-        player = new VBox();
+        playerBox = new VBox();
         balanceHold = new HBox();
 
         // Add other initialization logic if needed
     }
 
     private void layoutControls() {
-        player.getChildren().addAll(nameLabel,balanceLabel, balanceHold, cardHoldBacket);
-        getChildren().add(player);
+        playerBox.getChildren().addAll(nameLabel,balanceLabel, balanceHold, cardHoldBacket);
+        getChildren().add(playerBox);
     }
 
     public HBox getCardHoldBacket() {

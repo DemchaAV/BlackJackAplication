@@ -86,15 +86,15 @@ public class MainGame extends Game implements Initializable {
     private PlayerPane createPlayerPane(int id) {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("player.fxml"));
         PlayerPane playerPane = new PlayerPane(game.getPlayer(id));
-        try {
-            loader.load();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+//        try {
+//           playerPane = loader.load();
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
 
         // Получите контроллер
         PlayerController playerController = loader.getController();
-
+//playerController.seter(playerPane);
         // Установите данные для нового игрока
 
         return playerPane;
