@@ -1,10 +1,25 @@
 package com.example.blackjackaplication.back;
 
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+import javafx.scene.image.Image;
+
 import java.util.ArrayList;
 
 public class Player  implements Action {
     private String name;
     private int balance;
+
+    //FXML
+    private final StringProperty nameLabel = new SimpleStringProperty();
+    private final StringProperty balanceLabel = new SimpleStringProperty();
+    private ObjectProperty<Image> cardView = new SimpleObjectProperty<>();
+
+public void setNameLabel(){
+//    nameLabel.set(name);
+}
 
     public int getBalance() {
         return balance;

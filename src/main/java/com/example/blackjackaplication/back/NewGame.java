@@ -34,6 +34,11 @@ public class NewGame {
 
     }
 
+    public Deck getDeck() {
+        return deck;
+    }
+
+
     public ArrayList<Integer> getAmoundScore() {
         return amoundScore;
     }

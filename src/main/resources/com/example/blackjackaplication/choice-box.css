@@ -1,22 +1,24 @@
 /* styles.css */
 
 .choice-box {
-  -fx-background-color: #29568a; /* Цвет фона ChoiceBox */
-  -fx-text-fill: #ffffff; /* Цвет текста ChoiceBox */
+  -fx-background-color: #275996; /* Цвет фона ChoiceBox */
+  -fx-text-fill: e2e2e2; /* Цвет текста ChoiceBox */
   -fx-font-size: 16px; /* Установите желаемый размер шрифта */
 }
 
 .choice-box .label {
-  -fx-text-fill: #ffffff; /* Цвет текста по умолчанию */
+  -fx-text-fill: e2e2e2; /* Цвет текста по умолчанию */
+  
 }
 
 .choice-box:hover {
-  -fx-background-color: #3674bb; /* Цвет ChoiceBox при наведении */
+  -fx-background-color: #3a78be; /* Цвет ChoiceBox при наведении */
 }
+
 
 .choice-box .arrow {
   -fx-background-color: #ffffff; /* Цвет стрелочки */
-  -fx-text-fill: #ffffff;
+  -fx-text-fill: #e2e2e2;
 }
 
 .choice-box .context-menu {
@@ -31,10 +33,11 @@
 }
 
 .choice-box .context-menu .label {
-  -fx-text-fill: #ffffff; /* Цвет шрифта в выпадающем списке */
+  -fx-text-fill: #e2e2e2; /* Цвет шрифта в выпадающем списке */
 }
 
 .choice-box .context-menu-item:selected {
-  -fx-background-color: #ffffff; /* Цвет выбранного элемента */
+  -fx-background-color: #e2e2e2; /* Цвет выбранного элемента */
   -fx-text-fill: #ffffff00;; /* Цвет текста выбранного элемента */
 }
+

@@ -13,7 +13,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public abstract class Game implements GameSetter, Initializable {
-    protected static NewGame game;
+    static NewGame game;
+    static int dropCount = 0;
 
     protected Stage stage;
     protected Parent root;
@@ -25,22 +26,15 @@ public abstract class Game implements GameSetter, Initializable {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(newScene_fxml));
             this.root = fxmlLoader.load();
             T controller = fxmlLoader.getController();
-
-            // Устанавливаем игру в контроллер, если он поддерживает интерфейс GameSetter
-
-
             this.stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             this.scene = new Scene(this.root);
             this.stage.setScene(this.scene);
             this.stage.setTitle(title);
-            ((GameSetter) controller).setGame(game);
             this.stage.show();
         } catch (IOException e) {
-            // Handle the exception (e.g., log it or show an error message)
             e.printStackTrace();
         }
     }
-
 
     public void setGame(NewGame game) {
         this.game = game;

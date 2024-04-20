@@ -5,18 +5,20 @@
 package com.example.blackjackaplication;
 
 
-import com.example.blackjackaplication.back.NewGame;
+import com.example.blackjackaplication.back.Player;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -25,90 +27,89 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class MainGame extends Game implements Initializable {
-    /**
-     * Sample Skeleton for 'main-game.fxml' Controller Class
-     */
 
-
-    @FXML // ResourceBundle that was given to the FXMLLoader
+    @FXML
     private ResourceBundle resources;
 
-    @FXML // URL location of the FXML file that was given to the FXMLLoader
+    @FXML
     private URL location;
 
-
-    @FXML // fx:id="playersHolder"
-    private HBox playersHolder; // Value injected by FXMLLoader
     @FXML
-    Button startGameButton;
-    List<PlayerPane> playersPane = new ArrayList<>();
-    {
-        playersPane.add(new PlayerPane(game.getPlayer(0)));
-    }
+    private HBox playersHolder;
+
+    @FXML
+    private Button dropCard;
+    @FXML
+    private VBox dealerBox;
+
+    private List<Pane> playersPane = new ArrayList<>();
 
     private boolean isActiveButton = true;
 
-    {
-        System.out.println(game == null);
-    }
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        if (Game.game==null) {
+        if (Game.game == null) {
             return;
         } else {
             loadPlayers();
+            System.out.println("Players hold  " + playersHolder.getChildren().size());
         }
     }
 
     @FXML
     private void loadPlayers() {
         if (isActiveButton) {
-            // Создаем новый экземпляр Pane для нового игрока
+            Pane newPlayerPane = createPlayerPane(0);
+            newPlayerPane.setLayoutX(100);
+            newPlayerPane.setLayoutY(100);
+            dealerBox.setAlignment(Pos.CENTER);
+            dealerBox.getChildren().add(newPlayerPane);
             for (int i = 1; i < game.getAmountPlayers(); i++) {
-
-                PlayerPane newPlayerPane = createPlayerPane(i);
-
-                // Добавляем нового игрока в playersHolder
-                playersPane.add(newPlayerPane);
+                newPlayerPane = createPlayerPane(i);
                 playersHolder.getChildren().add(newPlayerPane);
             }
         }
         isActiveButton = false;
     }
 
-    private void  drop(){
-        game.firstDropCard();
-
-    }
-
-
-    private PlayerPane createPlayerPane(int id) {
+    private Pane createPlayerPane(int id) {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("player.fxml"));
-        PlayerPane playerPane = new PlayerPane(game.getPlayer(id));
-//        try {
-//           playerPane = loader.load();
-//        } catch (IOException e) {
-//            throw new RuntimeException(e);
-//        }
+        Pane playerPane;
+        try {
+            playerPane = loader.load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
-        // Получите контроллер
         PlayerController playerController = loader.getController();
-//playerController.seter(playerPane);
-        // Установите данные для нового игрока
-
+        playerController.setInfo(game.getPlayer(id));
         return playerPane;
     }
 
-
     @FXML
-    private void dropCards(){
-        game.firstDropCard();
+    private void dropCards(ActionEvent event) {
+        System.out.println("drop card");
+        if (dropCount == 0) {
+            game.firstDropCard();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("main-game.fxml"));
+            Parent root;
+            try {
+                root = loader.load();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            MainGame mainGameController = loader.getController();
+            mainGameController.setGame(game);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+            mainGameController.dropCard.setText("GetCard");
+            mainGameController.playersHolder.setSpacing(80);
+            dropCount++;
+        } else {
+            System.out.println("get card for first player");
+        }
     }
-
-
-
-
-
-
 }
+

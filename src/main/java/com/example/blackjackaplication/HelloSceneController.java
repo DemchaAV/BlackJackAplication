@@ -4,6 +4,7 @@ import com.example.blackjackaplication.back.NewGame;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
@@ -11,7 +12,7 @@ import javafx.scene.layout.Pane;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class HelloSceneController extends Game implements Initializable{
+public class HelloSceneController extends Game implements Initializable {
     @FXML
     private ChoiceBox<String> choiceBox;
 
@@ -53,15 +54,15 @@ public class HelloSceneController extends Game implements Initializable{
 
     @FXML
     private void registration(ActionEvent event) {
-        changeScene(event, "registration-scene.fxml","BlackJack", AutorizationController.class);
+        changeScene(event, "registration-scene.fxml", "BlackJack", AutorizationController.class);
         System.out.println("Registration");
     }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         choiceBox.getItems().setAll(choiceList);
         choiceBox.getSelectionModel().select(" Player");
         choiceBox.setOnAction(this::setAmountPlayers);
-
     }
 }
 
