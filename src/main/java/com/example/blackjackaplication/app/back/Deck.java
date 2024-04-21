@@ -12,20 +12,15 @@ public class Deck {
 
     {
         String cardPath = "img/deck/";
-        String hearts = cardPath + "Hearts/";
-        String diamonds = cardPath + "Diamonds/";
-        String clubs = cardPath + "Clubs/";
-        String spades = cardPath + "Spades/";
-        String jokers = cardPath + "Jokers/";
         String format = ".png";
 
         String currentPath;
         for (int i = 0; i <= 3; i++) {
             currentPath = switch (i) {
-                case 0 -> cardPath + hearts;
-                case 1 -> cardPath + diamonds;
-                case 2 -> cardPath + clubs;
-                case 3 -> cardPath + spades;
+                case 0 -> cardPath + "Hearts/";
+                case 1 -> cardPath + "Diamonds/";
+                case 2 -> cardPath + "Clubs/";
+                case 3 -> cardPath + "Spades/";
                 default -> throw new IllegalStateException("Unexpected value: " + i);
             };
             for (int j = 1; j <= 13; j++) {
@@ -35,8 +30,9 @@ public class Deck {
             deckUrl.put(54, "img/deck/Jokers/Joker_2.png");
 
         }
-        deckUrl.put(53, cardPath + jokers + "Joker_1.png");
-        deckUrl.put(54, cardPath + jokers + "Joker_2.png");
+        String jokers = cardPath + "Jokers/";
+        deckUrl.put(53, jokers + "Joker_1.png");
+        deckUrl.put(54, jokers + "Joker_2.png");
     }
 
     public Deck() {
