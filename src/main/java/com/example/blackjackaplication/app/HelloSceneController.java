@@ -1,10 +1,9 @@
-package com.example.blackjackaplication;
+package com.example.blackjackaplication.app;
 
-import com.example.blackjackaplication.back.NewGame;
+import com.example.blackjackaplication.app.back.NewGame;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;

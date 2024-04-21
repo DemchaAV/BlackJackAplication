@@ -1,5 +1,5 @@
-package com.example.blackjackaplication;
-import com.example.blackjackaplication.back.Player;
+package com.example.blackjackaplication.app;
+import com.example.blackjackaplication.app.back.Player;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;

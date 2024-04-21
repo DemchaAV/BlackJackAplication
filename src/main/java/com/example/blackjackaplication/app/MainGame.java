@@ -2,10 +2,9 @@
  * Sample Skeleton for 'scratch-scene.fxml' Controller Class
  */
 
-package com.example.blackjackaplication;
+package com.example.blackjackaplication.app;
 
 
-import com.example.blackjackaplication.back.Player;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

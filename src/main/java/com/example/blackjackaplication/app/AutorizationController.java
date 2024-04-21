@@ -1,4 +1,4 @@
-package com.example.blackjackaplication;
+package com.example.blackjackaplication.app;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

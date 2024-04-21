@@ -1,7 +1,7 @@
-package com.example.blackjackaplication;
+package com.example.blackjackaplication.app;
 
-import com.example.blackjackaplication.back.GameSetter;
-import com.example.blackjackaplication.back.NewGame;
+import com.example.blackjackaplication.app.back.GameSetter;
+import com.example.blackjackaplication.app.back.NewGame;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;

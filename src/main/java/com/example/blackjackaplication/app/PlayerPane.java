@@ -1,7 +1,7 @@
-package com.example.blackjackaplication;
+package com.example.blackjackaplication.app;
 
 
-import com.example.blackjackaplication.back.Player;
+import com.example.blackjackaplication.app.back.Player;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;

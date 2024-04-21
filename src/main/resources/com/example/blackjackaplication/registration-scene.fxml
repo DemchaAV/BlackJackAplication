@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="registrationPane" minHeight="420.0" minWidth="550.0" prefHeight="424.0" prefWidth="557.0" stylesheets="@root.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.blackjackaplication.AutorizationController">
+<AnchorPane fx:id="registrationPane" minHeight="420.0" minWidth="550.0" prefHeight="424.0" prefWidth="557.0" stylesheets="@root.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.blackjackaplication.app.AutorizationController">
    <children>
    
           <Label fx:id="welcomeText" alignment="CENTER" depthTest="DISABLE" layoutX="3.0" layoutY="39.0" prefHeight="35.0" prefWidth="453.0" text="Wellcome to BlackJack" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="0.0">

@@ -7,6 +7,10 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import java.io.IOException;
 
+/**
+ * Application version with GUI
+ */
+
 public class BlackJackApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
@@ -17,5 +21,9 @@ public class BlackJackApplication extends Application {
         Image icon = new Image(getClass().getResourceAsStream("img/icon/Icon.png"));
         stage.getIcons().add(icon);
         stage.show();
+    }
+
+    public static void main(String[] args) {
+        launch();
     }
 }

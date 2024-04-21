@@ -1,4 +1,4 @@
-package com.example.blackjackaplication.back;
+package com.example.blackjackaplication.app.back;
 
 public class Dealer extends Player implements Action {
     private final String name = "Dealer";

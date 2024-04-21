@@ -1,4 +1,4 @@
-package com.example.blackjackaplication.back;
+package com.example.blackjackaplication.app.back;
 
 public interface Action {
     int bet = 25;

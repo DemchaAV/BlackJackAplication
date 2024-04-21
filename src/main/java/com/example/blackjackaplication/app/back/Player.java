@@ -1,4 +1,4 @@
-package com.example.blackjackaplication.back;
+package com.example.blackjackaplication.app.back;
 
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
