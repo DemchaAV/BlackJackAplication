@@ -23,6 +23,7 @@ public abstract class Game implements GameSetter, Initializable {
     public <T extends Game & Initializable> void changeScene(ActionEvent event, String newScene_fxml,
                                                              String title, Class<T> controllerClass) {
         try {
+            System.out.println(getClass().getResource(newScene_fxml));
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(newScene_fxml));
             this.root = fxmlLoader.load();
             T controller = fxmlLoader.getController();

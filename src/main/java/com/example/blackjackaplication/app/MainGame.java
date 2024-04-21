@@ -72,7 +72,7 @@ public class MainGame extends Game implements Initializable {
     }
 
     private Pane createPlayerPane(int id) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("player.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/blackjackaplication/player.fxml"));
         Pane playerPane;
         try {
             playerPane = loader.load();
@@ -90,7 +90,7 @@ public class MainGame extends Game implements Initializable {
         System.out.println("drop card");
         if (dropCount == 0) {
             game.firstDropCard();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("main-game.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/blackjackaplication/main-game.fxml"));
             Parent root;
             try {
                 root = loader.load();

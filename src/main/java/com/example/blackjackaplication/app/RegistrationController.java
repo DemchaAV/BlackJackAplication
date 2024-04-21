@@ -8,7 +8,7 @@ import javafx.scene.control.TextField;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class AutorizationController extends Game {
+public class RegistrationController extends Game {
     private String tempName;
     private int tempBalance;
     @FXML
@@ -25,15 +25,17 @@ public class AutorizationController extends Game {
         game.getPlayer(i).setBalance(tempBalance);
         playerBalenceField.setText(null);
         playerNameField.setText(null);
-        ++i;
-        infoPlayer.setText("Player " + i);
+        if(game.getAmountPlayers()>=i){
+            infoPlayer.setText("Player " + i);
+            ++i;
+        }
 
 
         System.out.println(game.getPlayers());
     }
 
     public void newScene(ActionEvent event) {
-        changeScene(event, "main-game.fxml", "Game", MainGame.class);
+        changeScene(event, "/com/example/blackjackaplication/main-game.fxml", "Game", MainGame.class);
     }
 
     public void acceptInfoPlayr(ActionEvent event) {

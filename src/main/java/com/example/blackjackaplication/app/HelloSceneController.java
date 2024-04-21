@@ -53,7 +53,7 @@ public class HelloSceneController extends Game implements Initializable {
 
     @FXML
     private void registration(ActionEvent event) {
-        changeScene(event, "registration-scene.fxml", "BlackJack", AutorizationController.class);
+        changeScene(event, "/com/example/blackjackaplication/registration-scene.fxml", "BlackJack", RegistrationController.class);
         System.out.println("Registration");
     }
 
