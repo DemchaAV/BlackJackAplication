@@ -26,16 +26,12 @@ public class Test extends Application {
     public void start(Stage stage)throws IOException {
         Group root = new Group();
 
-        // Создаем сцену с корневой группой, шириной и высотой, и цветом фона
         Scene scene = new Scene(root, 600, 600, Color.STEELBLUE);
 
-        // Устанавливаем сцену для объекта Stage
         stage.setScene(scene);
 
-        // Создаем объект Text с текстом
         Text text = new Text();
 
-        // Устанавливаем текст
         text.setText("WHOOOOA!!");
 
         // Устанавливаем позицию (X, Y)

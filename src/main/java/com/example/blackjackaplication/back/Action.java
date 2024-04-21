@@ -1,13 +1,8 @@
 package com.example.blackjackaplication.back;
 
-import java.util.ArrayList;
-
 public interface Action {
     int bet = 25;
-
-
     void getCard(int card);
-
     void setBet(int x);
 
     default void printSpace(int amount) {
